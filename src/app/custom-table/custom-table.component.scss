@@ -1,0 +1,15 @@
+.custom-table {
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    td {padding: 5px;}
+}
+
+.custom-table-head {
+    background: #ccd;
+    color: #000;
+    text-align: center;
+    font: 700 1.1rem/1.2rem Arial, monospace;
+    cursor: pointer;
+}

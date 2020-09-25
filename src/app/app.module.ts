@@ -8,13 +8,17 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { HttpService } from 'src/service/http/http.service';
 import { TodolistComponent } from './todolist/todolist.component';
+import { CustomTableComponent } from './custom-table/custom-table.component';
+import { CleanStringPipe } from './pipe/clean-string.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     SecondComponent,
-    TodolistComponent
+    TodolistComponent,
+    CustomTableComponent,
+    CleanStringPipe
   ],
   imports: [
     BrowserModule,
