@@ -1,0 +1,8 @@
+<h2 (click)="onCustom()">{{ title }}</h2>
+
+<ul *ngIf="hasListData()">
+    <li *ngFor="let d of data">
+        <span>{{ d.name }}</span>
+        <input type="checkbox" [(ngModel)]="d.done">
+    </li>
+</ul>
