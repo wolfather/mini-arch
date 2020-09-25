@@ -1,4 +1,6 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpService } from 'src/service/http/http.service';
 
 import { FirstComponent } from './first.component';
 
@@ -8,7 +10,14 @@ describe('FirstComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FirstComponent ]
+      declarations: [ FirstComponent ],
+      imports: [
+        HttpClientModule,
+      ],
+      providers: [
+        HttpClient,
+        HttpService,
+      ]
     })
     .compileComponents();
   }));

@@ -4,6 +4,7 @@ import { BridgeCommunication } from '../../bridge/bridge-communication/bridge.co
 import { ACTION } from '../../bridge/action/bridge.actions';
 import { Bridge } from '../../bridge/interface/bridge';
 import { BridgeMessageModel } from '../model/bridge-message.model';
+import { HttpService } from '../../service/http/http.service';
 
 @Component({
   selector: 'app-first',
@@ -20,9 +21,17 @@ export class FirstComponent implements OnInit {
   private decrementCounterBody = new BridgeMessageModel({type: ACTION.DECREMENT_COUNTER});
   private resetCounterBody = new BridgeMessageModel({type: ACTION.RESET_COUNTER});
 
-  constructor() { }
+  constructor(
+    private readonly http: HttpService,
+  ) { }
 
   ngOnInit(): void {
+    this.http
+      .get('./stub/people.json', {})
+      .subscribe(
+        response => console.log(response),
+        error => console.log('error', error)
+      );
   }
 
   public passInfo(): void {
