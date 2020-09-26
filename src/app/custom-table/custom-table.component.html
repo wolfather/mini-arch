@@ -1,0 +1,15 @@
+<table class="custom-table">
+    <thead>
+        <tr>
+            <td *ngFor="let head of createHeader()"
+                class="custom-table-head"
+                (click)="orderBy(head)">{{ head | cleanString }}
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of createBody()">
+            <td *ngFor="let cell of row">{{ cell }}</td>
+        </tr>
+    </tbody>
+</table>
